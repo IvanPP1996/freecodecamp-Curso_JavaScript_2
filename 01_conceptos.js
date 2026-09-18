@@ -87,9 +87,110 @@ console.log(JSON.stringify(
 
 // Objeto this --------------------------------------------
 
-var obj = {
-    foo: function () {return "foo"},
+/* var obj = {
+    foo: function () { return "foo" },
     bar: function () {
         document.addEventListener("click", Event => this.foo())
     }
+}; */
+
+
+// Clousures (Clausulas) --------------------------------------------
+
+/* const a = "Hola";
+
+function global() {
+    const b = "¿Cómo"
+    function local() {
+        const c = "estás?"
+        return `${a} ${b} ${c}`;
+    };
+    return local;
 };
+
+const clausula = global();
+console.log(clausula()); */
+
+/* const miContador = (function () {
+    let contador = 0;
+
+    function incrementar () {
+        return contador++;
+    };
+    function decrementar () {
+        return contador--;
+    };
+    function valor () {
+        return contador;
+    };
+
+    return {
+        incrementar,
+        decrementar,
+        valor
+    };
+})();
+
+console.log(miContador.valor());
+console.log(miContador.incrementar());
+console.log(miContador.valor());
+console.log(miContador.incrementar());
+console.log(miContador.incrementar());
+console.log(miContador.valor());
+console.log(miContador.decrementar());
+console.log(miContador.valor()); */
+
+// Asincronía --------------------------------------------------
+
+const datos = [
+    /* {
+        id: 1,
+        title: "Iron man",
+        year: 2008
+    },
+    {
+        id: 2,
+        title: "SpiderMan Homecoming",
+        year: 2017
+    },
+    {
+        id: 3,
+        title: "Avengers Endgame",
+        year: 2019
+    } */
+];
+
+
+const devolverDatos = () => {
+    return datos;
+};
+console.log(JSON.stringify(devolverDatos()));
+
+
+// Aplicando asincronia
+const devolverDatos_1 = () => {
+    // Aplicando promesas para mostrar
+    return new Promise((resolve, reject) => {
+        if(datos.length === 0) {
+            reject(new Error("No existen datos"));
+        };
+        setTimeout(() => {
+            resolve(datos);
+        }, 1500 /*milisegundos 1.5 segundos*/)
+    })
+};
+
+/* devolverDatos_1()
+    .then((datos) => console.log(JSON.stringify(datos))); */
+
+
+async function datosConAwait () {
+    try {
+        const valores = await devolverDatos_1();
+        console.log(JSON.stringify(valores));
+    } catch (err) {
+        console.log(err.message);
+    }
+};
+
+datosConAwait();
