@@ -1,0 +1,21 @@
+{
+  "name": "freecodecamp-curso_javascript_2",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "02_funcionalidades_antes_REACT.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanPP1996/freecodecamp-Curso_JavaScript_2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IvanPP1996/freecodecamp-Curso_JavaScript_2/issues"
+  },
+  "homepage": "https://github.com/IvanPP1996/freecodecamp-Curso_JavaScript_2#readme",
+  "description": ""
+}
